@@ -25,20 +25,8 @@
   color: #000000;
 }
 .custom-login-button {
-  display: none;
   width: 100%;
-}
-.visible-overlay {
-  text-align: center;
-  background-color: transparent;
-  color: white;
-  padding: 10px 20px;
   cursor: pointer;
-  border: 1px solid #00d1ff;
-  border-radius: 8px;
-  transition: 0.5s;
+  height: 30px;
 }
-.visible-overlay:hover {
-  background-color: #00d1ff;
-  color: black;
-}
+
