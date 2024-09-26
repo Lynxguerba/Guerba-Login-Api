@@ -1,0 +1,26 @@
+.log-in {
+  width: 100%;
+  height: 350px;
+  border-radius: 10px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+.content-1 {
+  background: linear-gradient(180deg, #0092f3, #00ffea);
+  border-radius: 10px 0px 0 10px;
+  transform: screwX(-10deg);
+  overflow: hidden;
+}
+.img-login {
+  width: 200px;
+}
+.content-2 {
+  background: rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 0 10px 10px 0;
+  height: 100%;
+  padding: 20px;
+}
+.btn-facebook i:hover{
+  color: #000000;
+}
