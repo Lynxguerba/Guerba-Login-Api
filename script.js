@@ -49,7 +49,7 @@ function logout() {
   FB.logout(function (response) {
     // Optional: Handle logout response (e.g., redirect to login page)
     console.log("Logged out of Facebook.");
-    window.location.href = "login.html"; // Redirect to login page after logout
+    window.location.href = "index.html"; // Redirect to login page after logout
   });
 }
 
