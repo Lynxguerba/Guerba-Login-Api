@@ -21,6 +21,24 @@
   height: 100%;
   padding: 20px;
 }
-.btn-facebook i:hover{
+.btn-facebook i:hover {
   color: #000000;
+}
+.custom-login-button {
+  display: none;
+  width: 100%;
+}
+.visible-overlay {
+  text-align: center;
+  background-color: transparent;
+  color: white;
+  padding: 10px 20px;
+  cursor: pointer;
+  border: 1px solid #00d1ff;
+  border-radius: 8px;
+  transition: 0.5s;
+}
+.visible-overlay:hover {
+  background-color: #00d1ff;
+  color: black;
 }

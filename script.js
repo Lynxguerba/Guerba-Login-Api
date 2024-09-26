@@ -44,3 +44,9 @@ function testAPI() {
       "Thanks for logging in, " + response.name + "!";
   });
 }
+
+document
+  .querySelector(".visible-overlay")
+  .addEventListener("click", function () {
+    checkLoginState();
+  });
