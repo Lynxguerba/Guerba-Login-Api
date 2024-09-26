@@ -35,7 +35,7 @@
 
     <!-- EXTERNAL -->
     <link rel="stylesheet" href="background.css" />
-    <link rel="stylesheet" href="wel.css" />
+    <link rel="stylesheet" href="index.css" />
   </head>
   <body>
     <!-- BACKGROUND -->
@@ -136,12 +136,29 @@
             </div>
           </div>
           <div class="col-12 col-md-6 content-2 order-first order-md-last">
-            <button onclick="logout()">Logout</button>
+            <button id="logoutButton">Logout from Facebook</button>
           </div>
         </div>
       </div>
     </div>
+    <script>
+      document
+        .getElementById("logoutButton")
+        .addEventListener("click", logoutFromFacebook);
 
+      function logoutFromFacebook() {
+        FB.logout(function (response) {
+          if (response.status === "not_authorized") {
+            // User logged out successfully
+            console.log("Logged out of Facebook.");
+            // Perform any necessary actions after logout, e.g., redirect to login page
+          } else {
+            // Handle errors or unexpected responses
+            console.error("Error logging out from Facebook:", response);
+          }
+        });
+      }
+    </script>
     <script src="script.js"></script>
 
     <script

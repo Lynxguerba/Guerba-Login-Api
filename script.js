@@ -4,8 +4,8 @@ function statusChangeCallback(response) {
   console.log(response); // The current login status of the person.
   if (response.status === "connected") {
     // Logged into your webpage and Facebook.
-      // testAPI();
-      window.location.href = "wel.html";  
+    // testAPI();
+    window.location.href = "wel.html";
   } else {
     // Not logged into your webpage or we are unable to tell.
     document.getElementById("status").innerHTML =
@@ -44,15 +44,6 @@ function testAPI() {
       "Thanks for logging in, " + response.name + "!";
   });
 }
-
-function logout() {
-  FB.logout(function (response) {
-    // Optional: Handle logout response (e.g., redirect to login page)
-    console.log("Logged out of Facebook.");
-    window.location.href = "index.html"; // Redirect to login page after logout
-  });
-}
-
 
 document
   .querySelector(".visible-overlay")
