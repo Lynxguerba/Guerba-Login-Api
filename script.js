@@ -4,7 +4,8 @@ function statusChangeCallback(response) {
   console.log(response); // The current login status of the person.
   if (response.status === "connected") {
     // Logged into your webpage and Facebook.
-    testAPI();
+      // testAPI();
+      window.location.href = "wel.html";  
   } else {
     // Not logged into your webpage or we are unable to tell.
     document.getElementById("status").innerHTML =
