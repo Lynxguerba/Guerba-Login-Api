@@ -1,15 +1,26 @@
 function statusChangeCallback(response) {
-  // Called with the results from FB.getLoginStatus().
-  console.log("statusChangeCallback");
-  console.log(response); // The current login status of the person.
   if (response.status === "connected") {
-    // Logged into your webpage and Facebook.
-    testAPI();
-    // window.location.href = "wel.html";
+    // Get the access token
+    const accessToken = response.authResponse.accessToken;
+
+    // Use the token to fetch the user's data
+    FB.api(
+      "/me",
+      {
+        fields: "name", // Fetch the user's name
+        access_token: accessToken,
+      },
+      function (userInfo) {
+        console.log("User Info:", userInfo);
+
+        // Redirect to wel.html with the user's name as a query parameter
+        window.location.href = `wel.html?name=${encodeURIComponent(
+          userInfo.name
+        )}`;
+      }
+    );
   } else {
-    // Not logged into your webpage or we are unable to tell.
-    document.getElementById("status").innerHTML =
-      "Please log " + "into this webpage.";
+    console.log("Not logged in");
   }
 }
 
@@ -35,18 +46,12 @@ window.fbAsyncInit = function () {
   });
 };
 
-function testAPI() {
-  // Testing Graph API after login.  See statusChangeCallback() for when this call is made.
-  console.log("Welcome!  Fetching your information.... ");
-  FB.api("/me", function (response) {
-    console.log("Successful login for: " + response.name);
-    document.getElementById("status").innerHTML =
-      "Thanks for logging in, " + response.name + "!";
-  });
-}
-
-document
-  .querySelector(".visible-overlay")
-  .addEventListener("click", function () {
-    checkLoginState();
-  });
+// function testAPI() {
+//   // Testing Graph API after login.  See statusChangeCallback() for when this call is made.
+//   console.log("Welcome!  Fetching your information.... ");
+//   FB.api("/me", function (response) {
+//     console.log("Successful login for: " + response.name);
+//     document.getElementById("status").innerHTML =
+//       "Thanks for logging in, " + response.name + "!";
+//   });
+// }
