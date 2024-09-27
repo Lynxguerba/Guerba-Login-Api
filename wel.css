@@ -1,0 +1,15 @@
+* {
+  /* outline: 1px solid red; */
+}
+.welcome-page {
+  width: 600px;
+  padding: 50px;
+  background: rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 20px;
+}
+img[alt="welcome-img"] {
+  width: 200px;
+  margin-bottom: 20px;
+}
