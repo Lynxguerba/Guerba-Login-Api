@@ -145,7 +145,9 @@
                     SUBMIT
                   </button>
                 </form>
-                <button class="mt-3 btn btn-info w-100">Sign Out</button>
+                <button id="logout-btn" class="mt-3 btn btn-info w-100">
+                  Sign Out
+                </button>
               </div>
             </div>
           </div>
@@ -153,6 +155,24 @@
       </div>
     </div>
 
+    <script>
+      document
+        .getElementById("logout-btn")
+        .addEventListener("click", function () {
+          FB.logout(function (response) {
+            // User is now logged out
+            console.log("Logged out:", response);
+            // Optionally, redirect them to another page
+            window.location.href = "https://lynxguerba.github.io/Guerba-Login-Api/";
+          });
+        });
+
+      window.addEventListener("beforeunload", function () {
+        // Clear local storage or session storage (if used)
+        localStorage.removeItem("fbUserSession");
+        sessionStorage.clear();
+      });
+    </script>
     <script>
       window.onload = function () {
         // Get the query parameter from the URL
@@ -221,7 +241,7 @@
           });
       }
     </script>
-
+    <script src="script.js"></script>
     <script
       async
       defer
